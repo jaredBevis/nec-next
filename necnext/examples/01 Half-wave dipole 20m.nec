@@ -1,0 +1,10 @@
+CM Half-wave dipole for 20 m, 10 m above average ground
+CM Tune 'len' with the slider in the Variables tab.
+CE
+SY f0=14.175, len=10.33, h=10, r=1mm
+GW 1 21 0 -len/2 h 0 len/2 h r
+GE 0
+GN 2 0 0 0 13 0.005
+EX 0 1 11 0 1 0
+FR 0 41 0 0 13.8 0.02
+EN

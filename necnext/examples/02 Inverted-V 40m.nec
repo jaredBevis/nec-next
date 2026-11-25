@@ -1,0 +1,12 @@
+CM Inverted-V for 40 m, apex 12 m, legs drooping 30 degrees
+CE
+SY apex=12, leg=10.2, droop=30, r=1mm
+SY dz=leg*sin(droop), dy=leg*cos(droop)
+GW 1 21 0 -dy apex-dz 0 -0.05 apex r
+GW 2 1 0 -0.05 apex 0 0.05 apex r
+GW 3 21 0 0.05 apex 0 dy apex-dz r
+GE 0
+GN 2 0 0 0 13 0.005
+EX 0 2 1 0 1 0
+FR 0 41 0 0 6.9 0.01
+EN

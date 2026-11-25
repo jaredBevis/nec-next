@@ -1,0 +1,59 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "Half-wave dipole 20m",
+  "notes": "Centre-fed dipole 10 m above average ground.",
+  "variables": [
+    [
+      "len",
+      "10.33"
+    ],
+    [
+      "h",
+      "10"
+    ]
+  ],
+  "radius": "1mm",
+  "material": "copper",
+  "density": "40",
+  "sim": {
+    "f_start": 13.8,
+    "f_stop": 14.6,
+    "steps": 41,
+    "ground": "Average (13, 5 mS/m)"
+  },
+  "elements": [
+    {
+      "name": "Dipole",
+      "x": "0",
+      "y": "-len/2",
+      "z": "h",
+      "azimuth": "90",
+      "elevation": "0",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "len/2",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": ""
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "len/2",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    }
+  ]
+}

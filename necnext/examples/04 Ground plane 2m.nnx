@@ -1,0 +1,132 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "Ground plane 2m",
+  "notes": "Quarter-wave vertical with four drooping radials. Each radial is its own element starting at the feed point.",
+  "variables": [
+    [
+      "vert",
+      "0.481"
+    ],
+    [
+      "rad",
+      "0.512"
+    ],
+    [
+      "droop",
+      "35"
+    ],
+    [
+      "h",
+      "5"
+    ]
+  ],
+  "radius": "1.5mm",
+  "material": "copper",
+  "density": "40",
+  "sim": {
+    "f_start": 140,
+    "f_stop": 152,
+    "steps": 41,
+    "ground": "Average (13, 5 mS/m)"
+  },
+  "elements": [
+    {
+      "name": "Vertical",
+      "x": "0",
+      "y": "0",
+      "z": "h",
+      "azimuth": "0",
+      "elevation": "90",
+      "enabled": true,
+      "items": [
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": ""
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "vert",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    },
+    {
+      "name": "Radial 1",
+      "x": "0",
+      "y": "0",
+      "z": "h",
+      "azimuth": "0",
+      "elevation": "-droop",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "rad",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    },
+    {
+      "name": "Radial 2",
+      "x": "0",
+      "y": "0",
+      "z": "h",
+      "azimuth": "90",
+      "elevation": "-droop",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "rad",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    },
+    {
+      "name": "Radial 3",
+      "x": "0",
+      "y": "0",
+      "z": "h",
+      "azimuth": "180",
+      "elevation": "-droop",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "rad",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    },
+    {
+      "name": "Radial 4",
+      "x": "0",
+      "y": "0",
+      "z": "h",
+      "azimuth": "270",
+      "elevation": "-droop",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "rad",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    }
+  ]
+}

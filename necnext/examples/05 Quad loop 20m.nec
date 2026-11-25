@@ -1,0 +1,13 @@
+CM Full-wave square loop (single quad element) for 20 m, fed at bottom centre
+CM Horizontally polarised; feed impedance near 120 ohm, so set Z0 to 120 if you like.
+CE
+SY side=5.54, h=12, r=1mm
+GW 1 9 0 -side/2 h 0 side/2 h r
+GW 2 9 0 side/2 h 0 side/2 h+side r
+GW 3 9 0 side/2 h+side 0 -side/2 h+side r
+GW 4 9 0 -side/2 h+side 0 -side/2 h r
+GE 0
+GN 2 0 0 0 13 0.005
+EX 0 1 5 0 1 0
+FR 0 41 0 0 13.8 0.02
+EN

@@ -1,0 +1,15 @@
+CM 3-element Yagi for 20 m, 15 m above average ground, aluminium tubing
+CM Reflector at x=0, director toward +X (main lobe at azimuth 0). Feed Z is about 35 ohm.
+CE
+SY r=12.7mm, h=15
+SY refl=10.96, de=10.15, dir=9.5
+SY s1=3.2, s2=3.0
+GW 1 21 0 -refl/2 h 0 refl/2 h r
+GW 2 21 s1 -de/2 h s1 de/2 h r
+GW 3 21 s1+s2 -dir/2 h s1+s2 dir/2 h r
+GE 0
+GN 2 0 0 0 13 0.005
+LD 5 0 0 0 2.5e7
+EX 0 2 11 0 1 0
+FR 0 41 0 0 13.9 0.02
+EN

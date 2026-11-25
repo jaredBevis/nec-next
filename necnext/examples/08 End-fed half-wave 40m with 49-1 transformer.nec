@@ -1,0 +1,14 @@
+CM End-fed half-wave for 40 m, 10 m high, with a 49:1 transformer and 1 m counterpoise
+CM Tag 3 is a 1-segment source wire placed away from the antenna; the NT card
+CM (shown as a Transformer in the Structure tab) couples it to the end of the radiator.
+CE
+SY len=19.9, h=10, r=1mm
+GW 1 41 0 0 h len 0 h r
+GW 2 3 0 0 h 0 0 h-1 r
+GW 3 1 -3 0 1 -3 0 1.05 1mm ' source wire for transformer
+GE 0
+GN 2 0 0 0 13 0.005
+EX 0 3 1 0 1 0
+NT 3 1 1 1 49000 0 -7000 0 1000 0 ' xfmr 1:49
+FR 0 41 0 0 6.9 0.0125
+EN

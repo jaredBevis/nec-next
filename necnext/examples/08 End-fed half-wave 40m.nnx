@@ -1,0 +1,66 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "End-fed half-wave 40m",
+  "notes": "Half-wave wire fed at one end through a 1:49 transformer, with a 1 m counterpoise hanging below the feed.",
+  "variables": [
+    [
+      "len",
+      "19.9"
+    ],
+    [
+      "h",
+      "10"
+    ]
+  ],
+  "radius": "1mm",
+  "material": "copper",
+  "density": "40",
+  "sim": {
+    "f_start": 6.9,
+    "f_stop": 7.4,
+    "steps": 41,
+    "ground": "Average (13, 5 mS/m)"
+  },
+  "elements": [
+    {
+      "name": "EFHW",
+      "x": "0",
+      "y": "0",
+      "z": "h-1",
+      "azimuth": "0",
+      "elevation": "90",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "1",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": "1:49"
+        },
+        {
+          "type": "turn",
+          "name": "",
+          "mode": "relative",
+          "yaw": "0",
+          "pitch": "-90"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "len",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    }
+  ]
+}

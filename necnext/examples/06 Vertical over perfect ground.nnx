@@ -1,0 +1,48 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "Quarter-wave vertical 40m",
+  "notes": "Ground-mounted vertical over perfect ground, fed at the base.",
+  "variables": [
+    [
+      "len",
+      "10.2"
+    ]
+  ],
+  "radius": "5mm",
+  "material": "copper",
+  "density": "40",
+  "sim": {
+    "f_start": 6.8,
+    "f_stop": 7.4,
+    "steps": 41,
+    "ground": "Perfect ground"
+  },
+  "elements": [
+    {
+      "name": "Vertical",
+      "x": "0",
+      "y": "0",
+      "z": "0",
+      "azimuth": "0",
+      "elevation": "90",
+      "enabled": true,
+      "items": [
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": ""
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "len",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    }
+  ]
+}

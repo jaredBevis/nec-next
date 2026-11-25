@@ -1,0 +1,12 @@
+CM 5 m vertical for 40 m with a base loading coil (Lc), over perfect ground
+CM The coil is an LD card (series R-L-C) on segment 1. 1.8 ohm models coil loss (Q about 200).
+CM Feed Z is only about 8 ohm, so set Z0 to 8 to see the match, or add a transformer.
+CE
+SY h=5, Lc=7.8uH, r=10mm
+GW 1 20 0 0 0 0 0 h r
+GE 1
+GN 1
+LD 0 1 1 1 1.8 Lc 0
+EX 0 1 1 0 1 0
+FR 0 41 0 0 6.9 0.01
+EN

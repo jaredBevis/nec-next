@@ -1,0 +1,59 @@
+Common subdirectories: nec2c/Input and w/Input
+diff -u -x .git nec2c/main.c w/main.c
+--- nec2c/main.c	2026-11-22 15:48:55.133274824 +0000
++++ w/main.c	2026-11-22 15:49:22.386381394 +0000
+@@ -81,6 +81,7 @@
+ 
+   /*** signal handler related code ***/
+   /* new and old actions for sigaction() */
++#ifndef _WIN32
+   struct sigaction sa_new, sa_old;
+ 
+ 
+@@ -95,6 +96,11 @@
+   sigaction( SIGFPE,  &sa_new, 0 );
+   sigaction( SIGTERM, &sa_new, 0 );
+   sigaction( SIGABRT, &sa_new, 0 );
++#else
++  signal( SIGINT, sig_handler ); signal( SIGSEGV, sig_handler );
++  signal( SIGFPE, sig_handler ); signal( SIGTERM, sig_handler );
++  signal( SIGABRT, sig_handler );
++#endif
+ 
+   /*** command line arguments handler ***/
+   if( argc == 1 )
+diff -u -x .git nec2c/misc.c w/misc.c
+--- nec2c/misc.c	2026-11-22 15:48:55.133274824 +0000
++++ w/misc.c	2026-11-22 15:49:22.385923140 +0000
+@@ -77,6 +77,10 @@
+ /* Returns process time (user+system) BUT in _msec_ */
+ void secnds( double *x)
+ {
++#ifdef _WIN32
++  *x = 1000.0 * (double)clock() / CLOCKS_PER_SEC;
++  return;
++#else
+   struct tms buffer;
+   double clk_tck;
+ 
+@@ -85,6 +89,7 @@
+   *x = 1000.0 * (double)(buffer.tms_utime + buffer.tms_stime) / clk_tck;
+ 
+   return;
++#endif
+ }
+ 
+ /*------------------------------------------------------------------------*/
+diff -u -x .git nec2c/nec2c.h w/nec2c.h
+--- nec2c/nec2c.h	2026-11-22 15:48:55.133274824 +0000
++++ w/nec2c.h	2026-11-22 15:49:22.385781717 +0000
+@@ -12,7 +12,9 @@
+ #include <errno.h>
+ #include <time.h>
+ #include <sys/types.h>
++#ifndef _WIN32
+ #include <sys/times.h>
++#endif
+ 
+ #ifndef	TRUE
+ #define	TRUE	1

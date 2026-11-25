@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "necnext"
+version = "0.3.0"
+description = "Modern cross-platform front end for the nec2c antenna simulator"
+requires-python = ">=3.9"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "KB6JRD" }]
+dependencies = ["numpy>=1.21", "pyqtgraph>=0.13"]
+optional-dependencies = { qt = ["PySide6>=6.5"], gl = ["PyOpenGL>=3.1"] }
+
+[project.scripts]
+necnext = "necnext.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["necnext*"]
+
+[tool.setuptools.package-data]
+necnext = ["examples/*.nec", "examples/*.nnx"]

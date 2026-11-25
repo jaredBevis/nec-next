@@ -1,0 +1,15 @@
+CM 8-turn axial-mode helix for 435 MHz over a ground reflector (perfect ground here)
+CM GH builds the helix along +Z from the origin; GM lifts it by 'gap'; tag 2 is the feed wire.
+CM The helix is about 220 ohm, so a 1:4 transformer from a separate source wire (tag 3) matches 50 ohm.
+CE
+SY f=435, lam=299.79/f, D=lam/pi, S=0.25*lam, N=8, r=1.5mm, gap=0.03
+GH 1 128 S N*S D/2 D/2 D/2 D/2 r
+GM 0 0 0 0 0 0 0 gap 1
+GW 2 2 D/2 0 0 D/2 0 gap r
+GW 3 1 1 1 0.2 1 1 0.21 1mm ' source wire for transformer
+GE 1
+GN 1
+EX 0 3 1 0 1 0
+NT 3 1 2 1 4000 0 -2000 0 1000 0 ' xfmr 1:4
+FR 0 36 0 0 400 2
+EN

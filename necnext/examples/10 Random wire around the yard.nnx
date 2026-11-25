@@ -1,0 +1,120 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "Random wire around the yard",
+  "notes": "A 9:1-fed random wire: up the house wall, along the fence, then round two corners of the yard. Insert, move or change the turns and the rest of the wire follows.",
+  "variables": [
+    [
+      "up",
+      "7"
+    ],
+    [
+      "run1",
+      "12"
+    ],
+    [
+      "run2",
+      "9"
+    ],
+    [
+      "run3",
+      "5"
+    ]
+  ],
+  "radius": "1mm",
+  "material": "copper",
+  "density": "40",
+  "sim": {
+    "f_start": 7.0,
+    "f_stop": 7.3,
+    "steps": 31,
+    "ground": "Average (13, 5 mS/m)"
+  },
+  "elements": [
+    {
+      "name": "Random wire",
+      "x": "0",
+      "y": "0",
+      "z": "0.5",
+      "azimuth": "0",
+      "elevation": "90",
+      "enabled": true,
+      "items": [
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": "1:9"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "up",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "turn",
+          "name": "",
+          "mode": "relative",
+          "yaw": "0",
+          "pitch": "-90"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "run1",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "turn",
+          "name": "",
+          "mode": "relative",
+          "yaw": "90",
+          "pitch": "0"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "run2",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "turn",
+          "name": "",
+          "mode": "relative",
+          "yaw": "45",
+          "pitch": "0"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "run3",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    },
+    {
+      "name": "Counterpoise",
+      "x": "0",
+      "y": "0",
+      "z": "0.5",
+      "azimuth": "180",
+      "elevation": "0",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "10",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    }
+  ]
+}

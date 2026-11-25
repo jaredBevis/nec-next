@@ -1,0 +1,111 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "Yagi 3-element 20m",
+  "notes": "Reflector, driven element and director as three separate elements. Select an element to move it; boom spacing is in the variables.",
+  "variables": [
+    [
+      "h",
+      "15"
+    ],
+    [
+      "refl",
+      "10.96"
+    ],
+    [
+      "de",
+      "10.15"
+    ],
+    [
+      "dir",
+      "9.5"
+    ],
+    [
+      "s1",
+      "3.2"
+    ],
+    [
+      "s2",
+      "3.0"
+    ]
+  ],
+  "radius": "12.7mm",
+  "material": "aluminium",
+  "density": "40",
+  "sim": {
+    "f_start": 13.9,
+    "f_stop": 14.7,
+    "steps": 41,
+    "ground": "Average (13, 5 mS/m)"
+  },
+  "elements": [
+    {
+      "name": "Reflector",
+      "x": "0",
+      "y": "-refl/2",
+      "z": "h",
+      "azimuth": "90",
+      "elevation": "0",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "refl",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    },
+    {
+      "name": "Driven element",
+      "x": "s1",
+      "y": "-de/2",
+      "z": "h",
+      "azimuth": "90",
+      "elevation": "0",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "de/2",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": ""
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "de/2",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    },
+    {
+      "name": "Director",
+      "x": "s1+s2",
+      "y": "-dir/2",
+      "z": "h",
+      "azimuth": "90",
+      "elevation": "0",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "dir",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    }
+  ]
+}

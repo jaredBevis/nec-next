@@ -1,0 +1,78 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "Axial-mode helix 70cm",
+  "notes": "8-turn axial-mode helix over a perfect ground plane, fed through a 1:4 transformer.",
+  "variables": [
+    [
+      "f",
+      "435"
+    ],
+    [
+      "lam",
+      "299.79/f"
+    ],
+    [
+      "D",
+      "lam/pi"
+    ],
+    [
+      "S",
+      "0.25*lam"
+    ],
+    [
+      "N",
+      "8"
+    ],
+    [
+      "gap",
+      "0.03"
+    ]
+  ],
+  "radius": "1.5mm",
+  "material": "copper",
+  "density": "40",
+  "sim": {
+    "f_start": 400,
+    "f_stop": 470,
+    "steps": 36,
+    "ground": "Perfect ground"
+  },
+  "elements": [
+    {
+      "name": "Helix",
+      "x": "D/2",
+      "y": "0",
+      "z": "0",
+      "azimuth": "0",
+      "elevation": "90",
+      "enabled": true,
+      "items": [
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": "1:4"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "gap",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "helix",
+          "name": "",
+          "turns": "N",
+          "diameter": "D",
+          "length": "N*S",
+          "radius": "",
+          "hand": "right",
+          "segs_per_turn": "16"
+        }
+      ]
+    }
+  ]
+}

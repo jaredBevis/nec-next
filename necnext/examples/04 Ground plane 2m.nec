@@ -1,0 +1,15 @@
+CM Quarter-wave ground plane for 2 m with four sloping radials
+CM The 35-degree radial droop raises the feed impedance toward 50 ohm.
+CE
+SY f=146, rad=0.512, vert=0.481, droop=35, h=5, r=1.5mm
+SY rh=rad*cos(droop), rv=rad*sin(droop)
+GW 1 11 0 0 h 0 0 h+vert r
+GW 2 9 0 0 h rh 0 h-rv r
+GW 3 9 0 0 h 0 rh h-rv r
+GW 4 9 0 0 h -rh 0 h-rv r
+GW 5 9 0 0 h 0 -rh h-rv r
+GE 0
+GN 2 0 0 0 13 0.005
+EX 0 1 1 0 1 0
+FR 0 41 0 0 140 0.3
+EN

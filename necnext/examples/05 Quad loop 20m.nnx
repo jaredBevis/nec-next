@@ -1,0 +1,101 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "Quad loop 20m",
+  "notes": "One-wavelength square loop, fed at the bottom centre. Three 'Up 90\u00b0' turns walk the wire around the square.",
+  "variables": [
+    [
+      "side",
+      "5.54"
+    ],
+    [
+      "h",
+      "12"
+    ]
+  ],
+  "radius": "1mm",
+  "material": "copper",
+  "density": "40",
+  "sim": {
+    "f_start": 13.8,
+    "f_stop": 14.6,
+    "steps": 41,
+    "ground": "Average (13, 5 mS/m)"
+  },
+  "elements": [
+    {
+      "name": "Loop",
+      "x": "0",
+      "y": "-side/2",
+      "z": "h",
+      "azimuth": "90",
+      "elevation": "0",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "side/2",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": ""
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "side/2",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "turn",
+          "name": "",
+          "mode": "relative",
+          "yaw": "0",
+          "pitch": "90"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "side",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "turn",
+          "name": "",
+          "mode": "relative",
+          "yaw": "0",
+          "pitch": "90"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "side",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "turn",
+          "name": "",
+          "mode": "relative",
+          "yaw": "0",
+          "pitch": "90"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "side",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    }
+  ]
+}

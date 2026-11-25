@@ -1,0 +1,62 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "Loaded short vertical 40m",
+  "notes": "5 m vertical with a base loading coil. Move the coil up the list to try centre loading.",
+  "variables": [
+    [
+      "h",
+      "5"
+    ],
+    [
+      "Lc",
+      "7.8uH"
+    ]
+  ],
+  "radius": "10mm",
+  "material": "copper",
+  "density": "40",
+  "sim": {
+    "f_start": 6.9,
+    "f_stop": 7.3,
+    "steps": 41,
+    "ground": "Perfect ground"
+  },
+  "elements": [
+    {
+      "name": "Vertical",
+      "x": "0",
+      "y": "0",
+      "z": "0",
+      "azimuth": "0",
+      "elevation": "90",
+      "enabled": true,
+      "items": [
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": ""
+        },
+        {
+          "type": "load",
+          "name": "",
+          "kind": "coil",
+          "L": "Lc",
+          "C": "100pF",
+          "R": "0",
+          "X": "0",
+          "Q": "200"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "h",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    }
+  ]
+}

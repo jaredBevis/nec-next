@@ -1,0 +1,4 @@
+numpy>=1.21
+pyqtgraph>=0.13
+PySide6>=6.5      # or PyQt5 / PyQt6 (Raspberry Pi: use the apt packages, see README)
+PyOpenGL>=3.1     # optional: hardware-accelerated 3D view

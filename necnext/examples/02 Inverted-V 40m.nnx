@@ -1,0 +1,70 @@
+{
+  "format": "necnext-design",
+  "version": 1,
+  "name": "Inverted-V 40m",
+  "notes": "Apex at 12 m, legs drooping 30\u00b0 below horizontal. The turn after the feed bends the second leg down by twice the droop.",
+  "variables": [
+    [
+      "apex",
+      "12"
+    ],
+    [
+      "leg",
+      "10.2"
+    ],
+    [
+      "droop",
+      "30"
+    ]
+  ],
+  "radius": "1mm",
+  "material": "copper",
+  "density": "40",
+  "sim": {
+    "f_start": 6.9,
+    "f_stop": 7.3,
+    "steps": 41,
+    "ground": "Average (13, 5 mS/m)"
+  },
+  "elements": [
+    {
+      "name": "Inverted V",
+      "x": "0",
+      "y": "-leg*cos(droop)",
+      "z": "apex-leg*sin(droop)",
+      "azimuth": "90",
+      "elevation": "droop",
+      "enabled": true,
+      "items": [
+        {
+          "type": "wire",
+          "name": "",
+          "length": "leg",
+          "radius": "",
+          "segments": ""
+        },
+        {
+          "type": "feed",
+          "name": "",
+          "voltage": "1",
+          "phase": "0",
+          "ratio": ""
+        },
+        {
+          "type": "turn",
+          "name": "",
+          "mode": "relative",
+          "yaw": "0",
+          "pitch": "-2*droop"
+        },
+        {
+          "type": "wire",
+          "name": "",
+          "length": "leg",
+          "radius": "",
+          "segments": ""
+        }
+      ]
+    }
+  ]
+}
